@@ -1,0 +1,23 @@
+---
+
+mirabelle_version: "0.0.2-alpha5"
+
+mirabelle_user: "mirabelle"
+
+mirabelle_url: "https://github.com/mcorbin/mirabelle/releases/download/v{{ mirabelle_version }}/mirabelle-{{ mirabelle_version }}-standalone.jar"
+
+mirabelle_install_dir: "/opt/mirabelle"
+
+mirabelle_io_directory: "/etc/mirabelle/io"
+
+mirabelle_streams_directory: "/etc/mirabelle/streams"
+
+mirabelle_streams_templates: []
+
+mirabelle_io_templates: []
+
+mirabelle_configuration_template: "mirabelle.edn.j2"
+
+mirabelle_configuration_directory: "/etc/mirabelle"
+
+mirabelle_service_template: "mirabelle.service.j2"

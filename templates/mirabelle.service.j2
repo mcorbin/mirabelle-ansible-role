@@ -1,0 +1,15 @@
+[Unit]
+Description=Mirabelle
+After=network.target
+ConditionPathExists={{ mirabelle_configuration_directory }}/mirabelle.edn
+
+[Service]
+User={{ mirabelle_user }}
+Environment=MIRABELLE_CONFIGURATION={{ mirabelle_configuration_directory }}/mirabelle.edn
+Group={{ mirabelle_user }}
+ExecStart=/usr/bin/java -Xms1024m -Xmx1024m -XX:+ExitOnOutOfMemoryError -jar {{ mirabelle_install_dir }}/mirabelle.jar
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

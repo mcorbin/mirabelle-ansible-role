@@ -1,0 +1,18 @@
+---
+- name: systemd | reload
+  become: true
+  ansible.builtin.systemd:
+    daemon_reload: yes
+
+- name: mirabelle | restart
+  become: true
+  ansible.builtin.systemd:
+    name: mirabelle
+    state: restarted
+
+- name: mirabelle | reload
+  become: true
+  ansible.builtin.systemd:
+    name: mirabelle
+    state: reloaded
+
